@@ -1,13 +1,164 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+    background: #4B69FD;
+    border: 2px solid black;
+    font-family: 'Poppins', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+section {
+    width: 100%;
+    text-align: center;
+    max-width: 900px;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 32px;
+    margin-bottom: 36px;
+    color: #4B69FD;
+}
+
+.grupo-input-btn {
+    margin-bottom: 32px;
+}
+
+.grupo-input-btn input {
+    border-top-left-radius: 45px;
+    border-bottom-left-radius: 45px;
+    height: 82px;
+    width: 70%;
+    box-sizing: border-box;
+    padding-left: 32px;
+    font-size: 20px;
+    border: 2px solid black;
+    box-shadow: 0px 2px 0px 1px #000000;
+}
+
+select:focus,
+.grupo-input-btn input:focus {
+    outline: none;
+}
+
+.grupo-input-btn button {
+    border-top-right-radius: 45px;
+    border-bottom-right-radius: 45px;
+    height: 82px;
+    width: 30%;
+    box-sizing: border-box;
+    border: 2px solid black;
+    font-size: 20px;
+    color: #000000;
+    box-shadow: 2px 2px 0px 1px #000000;
+    cursor: pointer;
+    background-color: #c4c4c4;
+}
+
+.grupo-input-btn button:hover {
+    opacity: 0.8;
+}
+
+ul li {
+    margin: 16px 0;
+    font-weight: 300;
+}
+
+.rodape-configuracoes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.botao {
+    width: 350px;
+    height: 80px;
+    font-size: 20px;
+    box-shadow: 2px 2px 0px 1px #000000;
+    border-radius: 45px;
+    background-color: #FE652B;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.grupo-input-btn button:disabled,
+.botao:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.botao:hover {
+    background-color: #4B69FD;
+}
+
+select {
+    border-radius: 45px;
+    height: 82px;
+    width: 70%;
+    box-sizing: border-box;
+    padding: 0 32px;
+    font-size: 20px;
+    border: 2px solid black;
+    box-shadow: 0px 2px 0px 1px #000000;
+}
+
+p {
+    font-size: 20px;
+    font-weight: 200;
+    margin: 32px 0;
+}
+
+.alerta.erro {
+    color: #842029;
+    background-color: #f8d7da;
+    padding: 16px;
+    border: 1px solid #f5c2c7;
+    border-radius: 8px;
+}
+
+footer.sorteio {
+    margin: 64px 0;
+}
+
+.sorteio .resultado {
+    color: #FE652BFC;
+    font-size: 25px;
+}
+
+@media screen and (max-width: 800px) {
+    p {
+        margin: 48px 0;
+    }
+
+    select {
+        width: 100%;
+    }
+
+    .botao {
+        width: 220px;
+        margin: 32px 0;
+    }
+    .rodape-configuracoes {
+        flex-direction: column;
+    }
+    .rodape-configuracoes img {
+        margin-top: 32px;
+    }
+    .grupo-input-btn input {
+        display: block;
+        width: 100%;
+        border-radius: 45px;
+        box-shadow: 0px 2px 0px 1px #000000;    
+        margin-bottom: 18px;
+    }
+    .grupo-input-btn button {
+        display: block;
+        margin-top: 16px;
+        margin: 0 auto;
+        width: 220px;
+        border-radius: 45px;
+    }
 }

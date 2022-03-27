@@ -94,6 +94,5 @@ describe('a página de Sorteio', () => {
         })
         const alerta = screen.queryByRole('alert')
         expect(alerta).not.toBeInTheDocument()
-
     })
 })

@@ -1,7 +1,7 @@
 import { useRecoilState, useSetRecoilState } from "recoil"
 import { erroState, participantesState } from "../atom"
 
-const useAdicionarParticipante = () => {
+export const useAdicionarParticipante = () => {
     const [participantes, setListaParticipantes] = useRecoilState(participantesState)
     const setErro = useSetRecoilState(erroState)
     return (participante: string) => {
@@ -15,5 +15,3 @@ const useAdicionarParticipante = () => {
         return setListaParticipantes(listaAntiga => [...listaAntiga, participante])
     }
 }
-
-export default useAdicionarParticipante

@@ -1,7 +1,7 @@
 import { useState } from "react"
 import Card from "../../componentes/Card"
-import useListaParticipantes from "../../state/hooks/useListaParticipantes"
-import useResultadoSorteio from "../../state/hooks/usResultadoSorteio"
+import { useListaParticipantes } from "../../state/hooks/useListaParticipantes"
+import { useResultadoSorteio } from "../../state/hooks/useResultadoSorteio"
 
 const Sorteio = () => {
 
@@ -30,7 +30,7 @@ const Sorteio = () => {
         <section className="sorteio">
             <h2>Quem vai tirar o papelzinho?</h2>
             <form onSubmit={exibirAmigo}>
-                <select value={participanteDaVez} onChange={evento => setParticipanteDaVez(evento.target.value)} required name="select-participante" id="select-participante">
+                <select value={participanteDaVez} onChange={evento => setParticipanteDaVez(evento.target.value)} placeholder="Selecione o participante" required name="select-participante" id="select-participante">
                     <option value="">Selecione seu nome</option>
                     {participantes.map((nome, index) => <option disabled={participantesJahBrincaram.includes(nome)} key={index}>{nome}</option>)}
                 </select>
@@ -38,7 +38,7 @@ const Sorteio = () => {
                 <button className="botao" disabled={!participanteDaVez || !!amigoSecreto} type='submit'>Sortear</button>
             </form>
             {amigoSecreto && <div>
-                <p className="resultado">{amigoSecreto}</p>
+                <p role="alert" className="resultado">{amigoSecreto}</p>
             </div>}
             <footer className="sorteio">
                 <img src="/imagens/aviao.png" className="aviao" alt="Um desenho de um avião de papel" />

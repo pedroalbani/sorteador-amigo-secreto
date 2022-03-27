@@ -1,8 +1,6 @@
 import { useRecoilValue } from "recoil"
 import { sorteioState } from "../atom"
 
-const useResultadoSorteio = () => {
+export const useResultadoSorteio = () => {
     return useRecoilValue(sorteioState)
 }
-
-export default useResultadoSorteio

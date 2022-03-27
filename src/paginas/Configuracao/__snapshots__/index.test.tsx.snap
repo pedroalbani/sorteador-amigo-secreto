@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`a página de Configuracao impede o início da brincadeira 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <section>
+      <h2>
+        Participantes
+      </h2>
+      <form>
+        <div
+          class="grupo-input-btn"
+        >
+          <input
+            name="nome-do-participante"
+            placeholder="Insira o nome do participante"
+            required=""
+            type="text"
+            value=""
+          />
+          <button
+            disabled=""
+            type="submit"
+          >
+            Adicionar
+          </button>
+        </div>
+      </form>
+      
+      <ul />
+      <footer
+        class="rodape-configuracoes"
+      >
+        <button
+          class="botao"
+          disabled=""
+        >
+          Iniciar brincadeira!
+        </button>
+        <img
+          alt="Sacolas de compras"
+          src="/imagens/sacolas.png"
+        />
+      </footer>
+    </section>
+  </div>
+</div>
+`;

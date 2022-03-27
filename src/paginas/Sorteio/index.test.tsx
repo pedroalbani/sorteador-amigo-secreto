@@ -93,7 +93,7 @@ describe('a página de Sorteio', () => {
             jest.runAllTimers();
         })
         const alerta = screen.queryByRole('alert')
-        expect(alerta).toBeInTheDocument()
+        expect(alerta).not.toBeInTheDocument()
 
     })
 })

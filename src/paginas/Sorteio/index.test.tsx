@@ -33,7 +33,7 @@ describe('a página de Sorteio', () => {
         (useListaParticipantes as jest.Mock).mockReturnValue(participantes);
         (useResultadoSorteio as jest.Mock).mockReturnValue(sorteio);
     })
-    test('exibe todos os participantes disponíveis', async () => {
+    test('exibe todos os participantes disponíveis dentro do select', async () => {
         render(
             <RecoilRoot>
                 <Sorteio />
@@ -41,7 +41,7 @@ describe('a página de Sorteio', () => {
         const options = screen.getAllByRole('option')
         expect(options).toHaveLength(participantes.length + 1) // existe já uma option padrão
     })
-    test('exibe o amigo secreto sorteado', async () => {
+    test('exibe o amigo secreto sorteado do participante selecionado', async () => {
 
         render(
             <RecoilRoot>
@@ -57,23 +57,6 @@ describe('a página de Sorteio', () => {
         const alerta = screen.queryByRole('alert')
         expect(alerta).toBeInTheDocument()
 
-    })
-    test('garante que o participante não sorteie o próprio nome', async () => {
-        render(
-            <RecoilRoot>
-                <Sorteio />
-            </RecoilRoot>)
-
-        const participante = participantes[1]
-
-        const select = screen.getByPlaceholderText('Selecione o participante')
-        fireEvent.change(select, { target: { value:  participante} })
-
-        const button = screen.getByRole('button')
-        fireEvent.click(button)
-
-        const alerta = screen.queryByRole('alert')
-        expect(alerta?.textContent).not.toBe(participante)
     })
     test('esconde o amigo secreto sorteado depois de 5 segundos', async () => {
         jest.useFakeTimers();
